@@ -1,0 +1,12 @@
+#container{
+    width: 600px;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+#container1{
+    width: 600px;
+    /* display: inline-flex;
+    float: right;
+    top:0px; */
+}
