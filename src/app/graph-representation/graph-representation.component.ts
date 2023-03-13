@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import Chart, { ChartData, registerables } from 'chart.js/auto';
 import { _isClickEvent } from 'chart.js/dist/helpers/helpers.core';
-import { Console } from 'console';
-import { forkJoin } from 'rxjs';
 import { CIRejected, jobTracks } from '../data.type';
 import { ChartDataService } from '../services/chart-data.service';
+import {MatDialog} from '@angular/material/dialog'
+import { TableDialogComponent } from '../table-dialog/table-dialog.component';
 
 @Component({
   selector: 'app-graph-representation',
@@ -25,10 +25,8 @@ export class GraphRepresentationComponent implements OnInit {
   public CIRejectedList:CIRejected[] | undefined;
   public CITBS:number | undefined;
   public jobTrack:undefined | jobTracks[];
-  constructor(private chartData:ChartDataService) {
-    this.labels1=['CIRejected','CIScheduled', 'CITBS'];
-    console.log(this.labels1);
-    
+  constructor(private chartData:ChartDataService, private matDialog:MatDialog ) {
+    this.labels1=['CIRejected','CIScheduled', 'CITBS'];    
   }
 
   ngOnInit():void{
@@ -37,15 +35,11 @@ export class GraphRepresentationComponent implements OnInit {
   }
 
   barClick(e,chart){
-    let ind=chart[0].index
-    console.log(this.labels1[ind])
-    this.chartData.CIList(this.labels1[ind]).subscribe((result)=>{
-      if(result){
-        this.CIRejectedList = result;
-        console.log(result);
-      }
-
-      
+    this.chartData.ind=this.labels1[chart[0].index]
+    
+    this.matDialog.open(TableDialogComponent,{
+      width:'450px',
+      height:'300px' 
     })
   }
   
@@ -196,53 +190,3 @@ export class GraphRepresentationComponent implements OnInit {
 
 
 
-// createChart(){    
-  
-//   this.jobTrack?.forEach(data => {
-//     this.n++;
-//     this.summitRequirement=data.summitRequirement;
-//     this.pendngRequirement=data.pendngRequirement;
-//     this.fullfilledPositions=data.fullfilledPositions;
-//     this.CIRejected=data.CIRejected;
-//     this.CIScheduled=data.CIScheduled;
-//     this.CITBS=data.CITBS;
-//     this.chartName="MyChart"+this.n;
-//     this.canvasId=document.getElementsByClassName("board");
-//     this.canvasId.id=this.chartName;
-
-  
-
-//     this.chart = new Chart("MyChart"+this.n, {
-//       type: 'bar', //this denotes the type of chart
-
-//       data: {// values on X-Axis
-//         labels: ['Summit Requirement', 'Pending Reqiurement','Fullfilled Position','CI Rejected','CI Scheduled','CI TBS', ],
-//         datasets: [
-//           {
-//             label: data.trackName,
-//             data: [this.summitRequirement, this.pendngRequirement, this.fullfilledPositions, this.CIRejected, this.CIScheduled, this.CITBS],
-//             backgroundColor: [
-//               'red',
-//               'pink',
-//               'green',
-//               'yellow',
-//               'orange',
-//               'blue',			
-//             ],
-//             //hoverOffset: 4
-//           }
-//         ],
-//       },
-//       options: {
-//         aspectRatio:2.5
-//       }
-
-//     }
-//     );
-   
-//     this.chart1.push(this.chart);
-    
-//   })
-  
-  
-// }

@@ -5,7 +5,7 @@
             "summitRequirement":5,
             "pendngRequirement":3,
             "fullfilledPositions":2,
-            "CIRejected":5,
+            "CIRejected":4,
             "CIScheduled":3,
             "CITBS":5,
             "id":1
@@ -15,7 +15,7 @@
             "summitRequirement":5,
             "pendngRequirement":3,
             "fullfilledPositions":2,
-            "CIRejected":5,
+            "CIRejected":4,
             "CIScheduled":3,
             "CITBS":5,
             "id":2 
@@ -25,7 +25,7 @@
             "summitRequirement":6,
             "pendngRequirement":2,
             "fullfilledPositions":2,
-            "CIRejected":5,
+            "CIRejected":4,
             "CIScheduled":3,
             "CITBS":5,
             "id":3 
@@ -34,67 +34,67 @@
     "CIRejected":[
         {
             "Name":"Aditya",
-            "Employee Code":"58893",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"58893",
+            "JobTrack":".Net Architecture"
         },
         {
             "Name":"Unnati",
-            "Employee Code":"58363",
-            "Job Track":".Net Core + Angular"
+            "EmployeeCode":"58363",
+            "JobTrack":".Net Core + Angular"
         },
         {
             "Name":"Seema",
-            "Employee Code":"52523",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"52523",
+            "JobTrack":".Net Architecture"
         },
         {
             "Name":"Shaurya",
-            "Employee Code":"51243",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"51243",
+            "JobTrack":".Net Architecture"
         }
     ],
     "CIScheduled":[
         {
             "Name":"Anjali",
-            "Employee Code":"58893",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"58893",
+            "JobTrack":".Net Architecture"
         },
         {
             "Name":"Akriti",
-            "Employee Code":"58363",
-            "Job Track":".Net Core + Angular"
+            "EmployeeCode":"58363",
+            "JobTrack":".Net Core + Angular"
         },
         {
             "Name":"Arpita",
-            "Employee Code":"52523",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"52523",
+            "JobTrack":".Net Architecture"
         },
         {
             "Name":"Pooja",
-            "Employee Code":"51243",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"51243",
+            "JobTrack":".Net Architecture"
         }
     ],
     "CITBS":[
         {
             "Name":"Priyanka",
-            "Employee Code":"58893",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"58893",
+            "JobTrack":".Net Architecture"
         },
         {
             "Name":"Pranjali",
-            "Employee Code":"58363",
-            "Job Track":".Net Core + Angular"
+            "EmployeeCode":"58363",
+            "JobTrack":".Net Core + Angular"
         },
         {
             "Name":"Priya",
-            "Employee Code":"52523",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"52523",
+            "JobTrack":".Net Architecture"
         },
         {
             "Name":"Preesha",
-            "Employee Code":"51243",
-            "Job Track":".Net Architecture"
+            "EmployeeCode":"51243",
+            "JobTrack":".Net Architecture"
         }
     ]
 }

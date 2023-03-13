@@ -1,0 +1,36 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    Resource Tracker DashBoard
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      
+  
+      <button mat-button class="menu-button" routerLink="/home">
+        <span>LeaderShip View</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/profile">
+        <span>GEMS</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/addData">
+        <span>Add Details</span>
+      </button>      
+  
+      
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <app-table></app-table><br><br>
+        <app-graph-representation></app-graph-representation>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
