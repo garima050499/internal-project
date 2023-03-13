@@ -14,7 +14,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './table/table.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {TableDialogComponent } from './table-dialog/table-dialog.component'
+import {TableDialogComponent } from './table-dialog/table-dialog.component';
+import { CandidateComponent } from './candidate/candidate.component';
+import { CandidateStatusComponent } from './candidate-status/candidate-status.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {TableDialogComponent } from './table-dialog/table-dialog.component'
     GraphRepresentationComponent,
     SidebarComponent,
     TableComponent,
-    TableDialogComponent
+    TableDialogComponent,
+    CandidateComponent,
+    CandidateStatusComponent
   ],
   imports: [
     BrowserModule,

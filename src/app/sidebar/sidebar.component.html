@@ -12,23 +12,23 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-    <button mat-button class="menu-button" routerLink="/home">
+    <button mat-button class="menu-button" routerLink="/leadership">
       <span>LeaderShip View</span>
     </button>
     <button mat-button class="menu-button" routerLink="/profile">
       <span>Candidate Details</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/addData">
+    <button mat-button class="menu-button" routerLink="/candidate">
       <span>Add Candidate Data</span>
     </button>
-    <button mat-button class="menu-button" routerLink="/addData">
+    <button mat-button class="menu-button" routerLink="/status">
       <span>Update Status</span>
     </button>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="content mat-elevation-z8">
-      <app-table></app-table><br /><br />
-      <app-graph-representation></app-graph-representation>
+      <!-- <app-table></app-table><br /><br />
+      <app-graph-representation></app-graph-representation> -->
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
