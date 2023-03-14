@@ -17,6 +17,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {TableDialogComponent } from './table-dialog/table-dialog.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import { CandidateStatusComponent } from './candidate-status/candidate-status.component'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CandidateStatusComponent } from './candidate-status/candidate-status.co
     MatIconModule,
     MatDividerModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
