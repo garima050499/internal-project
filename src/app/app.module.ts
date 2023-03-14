@@ -18,6 +18,7 @@ import {TableDialogComponent } from './table-dialog/table-dialog.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import { CandidateStatusComponent } from './candidate-status/candidate-status.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TableComponent,
     TableDialogComponent,
     CandidateComponent,
-    CandidateStatusComponent
+    CandidateStatusComponent,
+    CandidateDetailsComponent
   ],
   imports: [
     BrowserModule,
