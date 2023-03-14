@@ -1,3 +1,10 @@
+<div>
+    <app-table></app-table>
+  </div>
+  <br />
+  <br />
+
+
 <div id="container">
     <div  class="chart-container">
         <canvas  class="board" id="MyChart1" >{{ chart }}</canvas>
@@ -8,4 +15,6 @@
         <canvas  class="board" id="MyCharts1" >{{ chart1 }}</canvas>
     </div>
 </div>
-<button (click)="nextChart()">next</button>
+<button mat-stroked-button color="primary" (click)="nextChart()">
+    Next Track
+  </button>
