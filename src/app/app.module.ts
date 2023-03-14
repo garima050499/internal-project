@@ -12,16 +12,21 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
-import { TableComponent } from './table/table.component';
+import {TableComponent } from './table/table.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {TableDialogComponent } from './table-dialog/table-dialog.component';
-import { CandidateComponent } from './candidate/candidate.component';
-import { CandidateStatusComponent } from './candidate-status/candidate-status.component'
-import { ReactiveFormsModule } from '@angular/forms';
-import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
-import { CIEditFormComponent } from './ciedit-form/ciedit-form.component';
-import { MatSelectModule } from '@angular/material/select/public-api';
-import { MatCardModule } from '@angular/material/card';
+import {CandidateComponent } from './candidate/candidate.component';
+import {CandidateStatusComponent } from './candidate-status/candidate-status.component'
+import {FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {CandidateDetailsComponent } from './candidate-details/candidate-details.component';
+import {CIEditFormComponent } from './ciedit-form/ciedit-form.component';
+import {MatNativeDateModule } from '@angular/material/core';
+import {MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule } from '@angular/material/select';
+import {MatRadioModule } from "@angular/material/radio";
+import {MatCardModule } from "@angular/material/card";
+import {MatInputModule } from "@angular/material/input";
+import {MatDatepickerModule } from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -33,7 +38,10 @@ import { MatCardModule } from '@angular/material/card';
     CandidateComponent,
     CandidateStatusComponent,
     CandidateDetailsComponent,
-    CIEditFormComponent
+    CIEditFormComponent,
+    CandidateComponent,
+    CandidateStatusComponent,
+    CandidateDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,10 +55,14 @@ import { MatCardModule } from '@angular/material/card';
     MatDividerModule,
     MatTableModule,
     MatDialogModule,
+    FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatCardModule
-    
+    MatCardModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+.form-structure{
+    width:600px;
+}
+mat-label{
+    font-weight: bolder;
+    font-size: 20px;
+}
+input{
+    margin-top: 10px;
+}
+textarea{
+    margin-top: 10px;
+    width: 600px;
+}
