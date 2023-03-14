@@ -6,7 +6,8 @@ export interface jobTracks{
     CIRejected:number,
     CIScheduled:number,
     CITBS:number,
-    id:number
+   grandtotal:number
+   TotalProposed:number
 }
 export interface CIRejected{
     name:string,
