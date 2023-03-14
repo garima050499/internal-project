@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 import {CIRejected, jobTracks} from '../data.type';
 
 @Injectable({
@@ -8,6 +9,7 @@ import {CIRejected, jobTracks} from '../data.type';
 export class ChartDataService {
 
   public ind:string;
+  public CIRejectedFormEditData:CIRejected
 
   constructor(private http:HttpClient) { }
   jobTrackList(){
@@ -15,5 +17,15 @@ export class ChartDataService {
   }
   CIList(listname:string){
     return this.http.get<CIRejected[]>(`http://localhost:3000/${listname}`)
+  }
+  editCIList(data:CIRejected){
+    let id = data.id;
+    return this.http.put<CIRejected>(`http://localhost:3000/${this.ind}/`+id,data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  addCIList(data:CIRejected){
+    return this.http.post<CIRejected>(`http://localhost:3000/${this.ind}/`,data)
   }
 }

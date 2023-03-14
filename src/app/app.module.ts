@@ -14,7 +14,20 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './table/table.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {TableDialogComponent } from './table-dialog/table-dialog.component'
+import {TableDialogComponent } from './table-dialog/table-dialog.component';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { CIEditFormComponent } from './ciedit-form/ciedit-form.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +35,9 @@ import {TableDialogComponent } from './table-dialog/table-dialog.component'
     GraphRepresentationComponent,
     SidebarComponent,
     TableComponent,
-    TableDialogComponent
+    TableDialogComponent,
+    CIEditFormComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +50,16 @@ import {TableDialogComponent } from './table-dialog/table-dialog.component'
     MatIconModule,
     MatDividerModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     
   ],
   providers: [],

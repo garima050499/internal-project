@@ -1,19 +1,38 @@
 
-    <button mat-icon-button style="float:right;margin:5px;">
-        <mat-icon >close</mat-icon>    
-    </button>
-<mat-dialog-content>
+<button mat-icon-button style="float:right;margin:5px;" mat-dialog-close>
+        <mat-icon>close</mat-icon>    
+ </button>
+<mat-dialog-content >
     <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
         <ng-container   matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Employee Name &nbsp;&nbsp;&nbsp;</th>
-          <td mat-cell *matCellDef="let element1">{{element1.Name}}&nbsp;&nbsp;&nbsp;</td>
+          <th mat-header-cell *matHeaderCellDef class="tableHeader">Employee Name &nbsp;&nbsp;&nbsp;</th>
+          <td mat-cell *matCellDef="let element1" class="tableData">{{element1.Name}}&nbsp;&nbsp;&nbsp;</td>
         </ng-container>
     
         <ng-container   matColumnDef="employeeCode">
-          <th mat-header-cell *matHeaderCellDef>Employee Code &nbsp;&nbsp;&nbsp;</th>
-          <td mat-cell *matCellDef="let element1"> {{element1.EmployeeCode}}&nbsp;&nbsp;&nbsp;</td>
-        </ng-container>          
+          <th mat-header-cell *matHeaderCellDef class="tableHeader">Employee Code &nbsp;&nbsp;&nbsp;</th>
+          <td mat-cell *matCellDef="let element1" class="tableData"> {{element1.EmployeeCode}}&nbsp;&nbsp;&nbsp;</td>
+        </ng-container>      
         
+
+        <ng-container   matColumnDef="reason">
+            <th mat-header-cell *matHeaderCellDef class="tableHeader">Reason of Rejection &nbsp;&nbsp;&nbsp;</th>
+            <td mat-cell *matCellDef="let element1" class="tableData"> {{element1.Reason}}&nbsp;&nbsp;&nbsp;</td>
+          </ng-container>
+
+
+          <ng-container   matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef class="tableHeader">Date &nbsp;&nbsp;&nbsp;</th>
+            <td mat-cell *matCellDef="let element1" class="tableData"> {{element1.Date}}&nbsp;&nbsp;&nbsp;</td>
+          </ng-container>
+
+          <ng-container   matColumnDef="actionEdit">
+            <th mat-header-cell *matHeaderCellDef class="tableHeader">Action &nbsp;&nbsp;&nbsp;</th>
+            <td mat-cell  *matCellDef="let element1">&nbsp;&nbsp;&nbsp;&nbsp;<button mat-raised-button (click)="Edit(element1)" mat-dialog-close color="primary">Edit</button></td>
+          </ng-container>
+
+          
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
