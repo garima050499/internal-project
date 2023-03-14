@@ -10,7 +10,7 @@ import { CandidateService } from '../services/candidate.service';
 export class CandidateComponent implements OnInit {
   trackDetails: any;
 
-  constructor() { }
+  constructor(private _candidateService: CandidateService) { }
 
   ngOnInit(): void {
     // this._candidateService.getTrackDetails().subscribe((data: any) => {

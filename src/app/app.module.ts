@@ -20,9 +20,11 @@ import { CandidateStatusComponent } from './candidate-status/candidate-status.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 import { CIEditFormComponent } from './ciedit-form/ciedit-form.component';
-import { MatSelectModule } from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from "@angular/material/radio";
+import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 

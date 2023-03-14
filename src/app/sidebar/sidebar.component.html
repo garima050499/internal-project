@@ -1,12 +1,21 @@
 <mat-toolbar class="mat-elevation-z8">
-    <button
-      mat-icon-button
-      *ngIf="sidenav.mode === 'over'"
-      (click)="sidenav.toggle()"
-    >
-      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
-      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Resource Tracker DashBoard
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <button mat-button class="menu-button" routerLink="/leadership">
+      <span>Leadership View</span>
     </button>
+<<<<<<< HEAD
     Resource Tracker DashBoard
   </mat-toolbar>
   
@@ -36,3 +45,23 @@
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+=======
+    <button mat-button class="menu-button" routerLink="/details">
+      <span>Candidate Details</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/candidate">
+      <span>Add Candidate Data</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/requirement">
+      <span>Add Requirement</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <!-- <app-table></app-table><br /><br />
+      <app-graph-representation></app-graph-representation> -->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+>>>>>>> 58c0bdaaf0eac55e2e1b3c32bac4e2ef31b3e1dc
