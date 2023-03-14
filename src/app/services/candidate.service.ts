@@ -13,7 +13,11 @@ export class CandidateService {
     return this._http.post("", data);
   }
 
-  updateInterViewStatus(data: any): Observable<any> {
-    return this._http.patch("", data);
+  getCandidateList(): Observable<any> {
+    return this._http.get("");
+  }
+
+  getTrackDetails(): Observable<any> {
+    return this._http.get("");
   }
 }

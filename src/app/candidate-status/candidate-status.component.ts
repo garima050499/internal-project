@@ -15,28 +15,17 @@ export class CandidateStatusComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  candidate_status_form = new FormGroup({
-    employee_name: new FormControl("", [Validators.required]),
-    employee_track: new FormControl("", [Validators.required]),
-    panel: new FormControl("", [Validators.required]),
-    employee_status: new FormControl("", [Validators.required]),
-    remarks: new FormControl("", [Validators.required]),
+  requirement_form = new FormGroup({
+    requirement: new FormControl("", [Validators.required]),
+    track: new FormControl("", [Validators.required]),
   })
 
   getControl(name: any) : AbstractControl | null {
-    return this.candidate_status_form.get(name);
+    return this.requirement_form.get(name);
   }
 
-  updateInterviewStatus() {
-    this._candidateService.updateInterViewStatus(this.candidate_status_form.value).subscribe({
-      next:(val: any) => {
-        alert("Candidate status updated sucessfully");
-        console.log(val);
-      },
-      error: (err: any) => {
-        console.error(err);
-      },
-    });
+  addRequirement() {
+    console.log(this.requirement_form.value)
   }
 
 }

@@ -1,140 +1,58 @@
 <form
-  [formGroup]="candidate_status_form"
-  (ngSubmit)="
-    candidate_status_form.status !== 'INVALID' && updateInterviewStatus()
-  "
+  [formGroup]="requirement_form"
+  (ngSubmit)="requirement_form.status !== 'INVALID' && addRequirement()"
   class="border p-3 rounded-3"
 >
   <div class="row">
     <div class="col text-center p-2 mb-3 bg-light">
-      <span class="fs-3">Candidate Interview Details</span>
+      <span class="fs-3">Requirement Details</span>
     </div>
   </div>
   <div class="row">
     <div class="col mb-3">
-      <label for="employee_name" class="form-label">Employee Name</label>
+      <label for="requirement" class="form-label">Number of Requirement</label>
       <input
         type="text"
         class="form-control"
-        id="employee_name"
-        formControlName="employee_name"
+        id="requirement"
+        formControlName="requirement"
         [ngClass]="{
           error:
-            getControl('employee_name')?.errors &&
-            getControl('employee_name')?.touched
+            getControl('requirement')?.errors &&
+            getControl('requirement')?.touched
         }"
       />
       <div
         *ngIf="
-          getControl('employee_name')?.errors &&
-          getControl('employee_name')?.touched
+          getControl('requirement')?.errors &&
+          getControl('requirement')?.touched
         "
       >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_name')?.errors?.['required']"
+          *ngIf="getControl('requirement')?.errors?.['required']"
         >
-          Employee Name is required</small
+          Please add requirement</small
         >
       </div>
     </div>
     <div class="col mb-3">
-      <label for="employee_track" class="form-label">Track</label>
+      <label for="track" class="form-label">Track</label>
       <input
         type="text"
         class="form-control"
-        id="employee_track"
-        formControlName="employee_track"
+        id="track"
+        formControlName="track"
         [ngClass]="{
-          error:
-            getControl('employee_track')?.errors &&
-            getControl('employee_track')?.touched
+          error: getControl('track')?.errors && getControl('track')?.touched
         }"
       />
-      <div
-        *ngIf="
-          getControl('employee_track')?.errors &&
-          getControl('employee_track')?.touched
-        "
-      >
+      <div *ngIf="getControl('track')?.errors && getControl('track')?.touched">
         <small
           class="text-danger"
-          *ngIf="getControl('employee_track')?.errors?.['required']"
+          *ngIf="getControl('track')?.errors?.['required']"
         >
           Track is required</small
-        >
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col mb-3">
-      <label for="panel" class="form-label">Panel</label>
-      <input
-        type="text"
-        class="form-control"
-        id="panel"
-        formControlName="panel"
-        [ngClass]="{
-          error: getControl('panel')?.errors && getControl('panel')?.touched
-        }"
-      />
-      <div *ngIf="getControl('panel')?.errors && getControl('panel')?.touched">
-        <small
-          class="text-danger"
-          *ngIf="getControl('panel')?.errors?.['required']"
-        >
-          Panel is required</small
-        >
-      </div>
-    </div>
-    <div class="col mb-3">
-      <label for="employee_status" class="form-label">Status</label>
-      <input
-        type="text"
-        class="form-control"
-        id="employee_status"
-        formControlName="employee_status"
-        [ngClass]="{
-          error:
-            getControl('employee_status')?.errors &&
-            getControl('employee_status')?.touched
-        }"
-      />
-      <div
-        *ngIf="
-          getControl('employee_status')?.errors &&
-          getControl('employee_status')?.touched
-        "
-      >
-        <small
-          class="text-danger"
-          *ngIf="getControl('employee_status')?.errors?.['required']"
-        >
-          Status is required</small
-        >
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="class col mb-3">
-      <label for="remarks" class="form-label">Remarks</label>
-      <input
-        type="text"
-        class="form-control"
-        id="remarks"
-        formControlName="remarks"
-        [ngClass]="{
-          error: getControl('remarks')?.errors && getControl('remarks')?.touched
-        }"
-      />
-      <div
-        *ngIf="getControl('remarks')?.errors && getControl('remarks')?.touched"
-      >
-        <small
-          class="text-danger"
-          *ngIf="getControl('remarks')?.errors?.['required']"
-        >
-          Remarks is required</small
         >
       </div>
     </div>
@@ -145,9 +63,9 @@
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="candidate_status_form.status === 'INVALID'"
+          [disabled]="requirement_form.status === 'INVALID'"
         >
-          Update Status
+          Add Requirement
         </button>
       </div>
     </div>

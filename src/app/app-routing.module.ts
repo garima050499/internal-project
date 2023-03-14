@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'leadership', component: GraphRepresentationComponent},
   {path: 'details', component: CandidateDetailsComponent},
   {path:'candidate', component: CandidateComponent},
-  {path: 'status', component: CandidateStatusComponent},
+  {path: 'requirement', component: CandidateStatusComponent},
 ];
 
 @NgModule({

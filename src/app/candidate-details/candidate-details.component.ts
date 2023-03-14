@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CandidateService } from '../services/candidate.service';
+
+
 
 @Component({
   selector: 'app-candidate-details',
@@ -10,6 +13,6 @@ export class CandidateDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
 }
