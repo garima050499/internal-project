@@ -14,7 +14,11 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './table/table.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {TableDialogComponent } from './table-dialog/table-dialog.component'
+import {TableDialogComponent } from './table-dialog/table-dialog.component';
+import { CandidateComponent } from './candidate/candidate.component';
+import { CandidateStatusComponent } from './candidate-status/candidate-status.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import {TableDialogComponent } from './table-dialog/table-dialog.component'
     GraphRepresentationComponent,
     SidebarComponent,
     TableComponent,
-    TableDialogComponent
+    TableDialogComponent,
+    CandidateComponent,
+    CandidateStatusComponent,
+    CandidateDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,8 @@ import {TableDialogComponent } from './table-dialog/table-dialog.component'
     MatIconModule,
     MatDividerModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
