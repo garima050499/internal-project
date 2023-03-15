@@ -20,7 +20,7 @@ import { CandidateStatusComponent } from './candidate-status/candidate-status.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 import { CIEditFormComponent } from './ciedit-form/ciedit-form.component';
-import { MatSelectModule } from '@angular/material/select/public-api';
+import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
