@@ -38,8 +38,8 @@ export class GraphRepresentationComponent implements OnInit {
     this.chartData.ind=this.labels1[chart[0].index]
     
     this.matDialog.open(TableDialogComponent,{
-      width:'450px',
-      height:'300px' 
+      width:'950px',
+      height:'400px' 
     })
   }
   

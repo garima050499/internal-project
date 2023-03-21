@@ -1,11 +1,11 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { GraphRepresentationComponent } from './graph-representation/graph-representation.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import {HttpClientModule } from '@angular/common/http';
+import {NgModule } from '@angular/core';
+import {BrowserModule } from '@angular/platform-browser';
+import {AppRoutingModule } from './app-routing.module';
+import {AppComponent } from './app.component';
+import {GraphRepresentationComponent } from './graph-representation/graph-representation.component';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SidebarComponent } from './sidebar/sidebar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
@@ -19,6 +19,9 @@ import { CandidateComponent } from './candidate/candidate.component';
 import { CandidateStatusComponent } from './candidate-status/candidate-status.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
+import { CIEditFormComponent } from './ciedit-form/ciedit-form.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { CandidateDetailsComponent } from './candidate-details/candidate-details
     TableDialogComponent,
     CandidateComponent,
     CandidateStatusComponent,
-    CandidateDetailsComponent
+    CandidateDetailsComponent,
+    CIEditFormComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,9 @@ import { CandidateDetailsComponent } from './candidate-details/candidate-details
     MatDividerModule,
     MatTableModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatCardModule
     
   ],
   providers: [],

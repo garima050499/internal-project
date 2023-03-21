@@ -1,0 +1,60 @@
+<button mat-icon-button style="float:right;margin:5px;" mat-dialog-close>
+    <mat-icon>close</mat-icon>    
+</button>
+<mat-dialog-content id="closeOnSave" >  
+    <form [formGroup]="CIRejectForm" class="form-container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>CI Reject Information</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Name : </mat-label>
+                    <input formControlName="Name" matInput>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Employee Code : </mat-label>
+                    <input  formControlName="EmployeeCode" matInput>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Job Track : </mat-label>
+                    <input  formControlName="JobTrack" matInput>
+                </mat-form-field>
+              </div>
+    
+              <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                <mat-label>Reason : </mat-label>
+                    <textarea  formControlName="Reason" matInput ></textarea>
+                </mat-form-field>
+              </div>
+             
+                    <input hidden formControlName="id" matInput >
+                
+              <div class="col-md-6 top-padding">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Date</mat-label>
+                        <input  formControlName="Date" matInput>
+                        <!-- <input  formControlName="date" matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker> -->
+                    </mat-form-field>                  
+                </div>
+            </div>
+            
+          </mat-card-content>
+          <mat-card-actions>
+            <button (click)="saveForm()" mat-raised-button color="primary" mat-dialog-close>Save</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+      <router-outlet></router-outlet>
+</mat-dialog-content>

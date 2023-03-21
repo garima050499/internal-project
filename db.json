@@ -1,100 +1,136 @@
 {
-    "jobTracks":[
-        {
-            "trackName":".Net Architecture",
-            "summitRequirement":5,
-            "pendngRequirement":3,
-            "fullfilledPositions":2,
-            "CIRejected":4,
-            "CIScheduled":3,
-            "CITBS":5,
-            "id":1
-        },
-        {
-            "trackName":".Net Core + Angular ( Fullstack)",
-            "summitRequirement":5,
-            "pendngRequirement":3,
-            "fullfilledPositions":2,
-            "CIRejected":4,
-            "CIScheduled":3,
-            "CITBS":5,
-            "id":2 
-        },
-        {
-            "trackName":"ASP.NET / C#",
-            "summitRequirement":6,
-            "pendngRequirement":2,
-            "fullfilledPositions":2,
-            "CIRejected":4,
-            "CIScheduled":3,
-            "CITBS":5,
-            "id":3 
-        }
-    ],
-    "CIRejected":[
-        {
-            "Name":"Aditya",
-            "EmployeeCode":"58893",
-            "JobTrack":".Net Architecture"
-        },
-        {
-            "Name":"Unnati",
-            "EmployeeCode":"58363",
-            "JobTrack":".Net Core + Angular"
-        },
-        {
-            "Name":"Seema",
-            "EmployeeCode":"52523",
-            "JobTrack":".Net Architecture"
-        },
-        {
-            "Name":"Shaurya",
-            "EmployeeCode":"51243",
-            "JobTrack":".Net Architecture"
-        }
-    ],
-    "CIScheduled":[
-        {
-            "Name":"Anjali",
-            "EmployeeCode":"58893",
-            "JobTrack":".Net Architecture"
-        },
-        {
-            "Name":"Akriti",
-            "EmployeeCode":"58363",
-            "JobTrack":".Net Core + Angular"
-        },
-        {
-            "Name":"Arpita",
-            "EmployeeCode":"52523",
-            "JobTrack":".Net Architecture"
-        },
-        {
-            "Name":"Pooja",
-            "EmployeeCode":"51243",
-            "JobTrack":".Net Architecture"
-        }
-    ],
-    "CITBS":[
-        {
-            "Name":"Priyanka",
-            "EmployeeCode":"58893",
-            "JobTrack":".Net Architecture"
-        },
-        {
-            "Name":"Pranjali",
-            "EmployeeCode":"58363",
-            "JobTrack":".Net Core + Angular"
-        },
-        {
-            "Name":"Priya",
-            "EmployeeCode":"52523",
-            "JobTrack":".Net Architecture"
-        },
-        {
-            "Name":"Preesha",
-            "EmployeeCode":"51243",
-            "JobTrack":".Net Architecture"
-        }
-    ]
+  "jobTracks": [
+    {
+      "trackName": ".Net Architecture",
+      "summitRequirement": 5,
+      "pendngRequirement": 3,
+      "fullfilledPositions": 2,
+      "CIRejected": 4,
+      "CIScheduled": 3,
+      "CITBS": 5,
+      "id": 1
+    },
+    {
+      "trackName": ".Net Core + Angular ( Fullstack)",
+      "summitRequirement": 5,
+      "pendngRequirement": 3,
+      "fullfilledPositions": 2,
+      "CIRejected": 4,
+      "CIScheduled": 3,
+      "CITBS": 5,
+      "id": 2
+    },
+    {
+      "trackName": "ASP.NET / C#",
+      "summitRequirement": 6,
+      "pendngRequirement": 2,
+      "fullfilledPositions": 2,
+      "CIRejected": 4,
+      "CIScheduled": 3,
+      "CITBS": 5,
+      "id": 3
+    }
+  ],
+  "CIRejected": [
+    {
+      "Name": "Unnati",
+      "EmployeeCode": "58363",
+      "JobTrack": ".Net Core + Angular",
+      "Reason": "Did nsfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 1
+    },
+    {
+      "Name": "Seema",
+      "EmployeeCode": "52523",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 2
+    },
+    {
+      "Name": "Shaurya",
+      "EmployeeCode": "51243",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "14-MAR-2022",
+      "id": 3
+    },
+    {
+      "Name": "Akanksha",
+      "EmployeeCode": "58893",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 1
+    }
+  ],
+  "CIScheduled": [
+    {
+      "Name": "Anjali",
+      "EmployeeCode": "58893",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 1
+    },
+    {
+      "Name": "Akriti",
+      "EmployeeCode": "58363",
+      "JobTrack": ".Net Core + Angular",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 2
+    },
+    {
+      "Name": "Arpita",
+      "EmployeeCode": "52523",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 3
+    },
+    {
+      "Name": "Pooja",
+      "EmployeeCode": "51243",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 4
+    }
+  ],
+  "CITBS": [
+    {
+      "Name": "Priyanka",
+      "EmployeeCode": "58893",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 1
+    },
+    {
+      "Name": "Pranjali",
+      "EmployeeCode": "58363",
+      "JobTrack": ".Net Core + Angular",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 2
+    },
+    {
+      "Name": "Priya",
+      "EmployeeCode": "52523",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 3
+    },
+    {
+      "Name": "Preesha",
+      "EmployeeCode": "51243",
+      "JobTrack": ".Net Architecture",
+      "Reason": "Did not satisfied the skillset",
+      "Date": "13-MAR-2022",
+      "id": 4
+    }
+  ]
 }

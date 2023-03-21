@@ -9,7 +9,10 @@ export interface jobTracks{
     id:number
 }
 export interface CIRejected{
-    name:string,
-    employeeCode:number,
-    jobTrack:string
+    Name:string,
+    EmployeeCode:number,
+    JobTrack:string,
+    Reason:string,
+    Date:Date,
+    id:number
 }

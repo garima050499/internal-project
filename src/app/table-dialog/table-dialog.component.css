@@ -1,0 +1,11 @@
+.tableHeader{
+    font-weight: bolder;
+    font-size: 15px;
+    padding-left: 4px;
+    border-right:0.0001em solid lightgrey;
+}
+
+.tableData{
+    border-right:0.0001em solid lightgrey;
+    padding-left: 4px;
+}
