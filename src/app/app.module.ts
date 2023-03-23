@@ -27,6 +27,10 @@ import {MatRadioModule } from "@angular/material/radio";
 import {MatCardModule } from "@angular/material/card";
 import {MatInputModule } from "@angular/material/input";
 import {MatDatepickerModule } from "@angular/material/datepicker";
+import { TrackNameComponent } from './track-name/track-name.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,8 @@ import {MatDatepickerModule } from "@angular/material/datepicker";
     CIEditFormComponent,
     CandidateComponent,
     CandidateStatusComponent,
-    CandidateDetailsComponent
+    CandidateDetailsComponent,
+    TrackNameComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,9 +67,10 @@ import {MatDatepickerModule } from "@angular/material/datepicker";
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ReactiveFormsModule    
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [CandidateComponent,CandidateDetailsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

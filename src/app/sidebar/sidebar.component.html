@@ -1,21 +1,23 @@
 
 
 <mat-toolbar class="mat-elevation-z8">
-  <button
+  <!-- <button
     mat-icon-button
     *ngIf="sidenav.mode === 'over'"
     (click)="sidenav.toggle()"
   >
-    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
-    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
-  </button>
+</button> -->
+    <!-- <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon> -->
+  
+  <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
   Resource Tracker DashBoard
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-    <button mat-button class="menu-button" routerLink="/leadership">
-      <span>Leadership View</span>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z1">
+    <button mat-button class="menu-button sidebar-item active" routerLink="/leadership">
+      <span class="align-middle">Leadership View</span>
     </button>
     <button mat-button class="menu-button" routerLink="/details">
       <span>Candidate Details</span>

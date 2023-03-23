@@ -1,0 +1,64 @@
+<div id="trackSelectContainer">
+    <h1>Track Name : 
+        <input list="trackname" name="trackname" (change)="changeTrackData()" [(ngModel)]="trackname">
+
+        <datalist id="trackname"   >
+            <option *ngFor="let tracks of jobTracks">{{tracks.trackName}} </option>
+        </datalist>
+    </h1>
+</div>
+<div class="trackDataContainer">
+    <mat-card class="totalRequirement">
+        <mat-card-title>Summit Requirement</mat-card-title><br/>
+        <mat-card-content>{{totalRequirement}}</mat-card-content><br/>
+    <mat-card style="width:265px;">
+        <mat-card-title>Percentage Fulfilled</mat-card-title><br/>
+        <div class="container">
+            <div class="skill html">80%</div>
+        </div>
+  
+    
+    </mat-card>
+        <!-- <mat-card-content style="font-size: 20px;text-align:left;">Pendng Requirement : {{pendingRequirement}}</mat-card-content> -->
+    </mat-card>
+    <mat-card>
+        <mat-card-title>CI Selected</mat-card-title><br/>
+        <mat-card-content>{{fullfilledPositions}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>CI Scheduled</mat-card-title><br/>
+        <mat-card-content>{{interviewing}}</mat-card-content>
+    </mat-card>    
+</div><br/><br/>
+<div class="trackDataContainer">
+    <mat-card class="totalRequirement">
+        <mat-card-title>Pending Requirement</mat-card-title><br/>
+        <mat-card-content>{{pendingRequirement}}</mat-card-content><br/>
+        <!-- <mat-card-content style="font-size: 20px;text-align:left;">Pendng Requirement : {{pendingRequirement}}</mat-card-content> -->
+    </mat-card>
+    <mat-card>
+        <mat-card-title>CI Rejected</mat-card-title><br/>
+        <mat-card-content>{{CIRejected}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>CI TBS</mat-card-title><br/>
+        <mat-card-content>{{CITBS}}</mat-card-content>
+    </mat-card>    
+</div>
+
+
+<!-- <div class="trackDataContainer">
+    <mat-card class="totalRequirement">
+        <mat-card-title>Summit Requirement</mat-card-title><br/>
+        <mat-card-content>{{totalRequirement}}</mat-card-content><br/>
+        <mat-card-content style="font-size: 20px;text-align:left;">Pendng Requirement : {{pendingRequirement}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>CI Selected</mat-card-title><br/>
+        <mat-card-content>{{fullfilledPositions}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>CI Scheduled</mat-card-title><br/>
+        <mat-card-content>{{interviewing}}</mat-card-content>
+    </mat-card>    
+</div> -->

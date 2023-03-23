@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import {CIRejected, jobTracks} from '../data.type';
+import {candidateList, CIRejected, jobTracks} from '../data.type';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +9,17 @@ import {CIRejected, jobTracks} from '../data.type';
 export class ChartDataService {
 
   public ind:string;
+  public trackname:string;
   public CIRejectedFormEditData:CIRejected
 
   constructor(private http:HttpClient) { }
   jobTrackList(){
     return this.http.get<jobTracks[]>('http://localhost:3000/jobTracks')
   }
+  candidateList(){
+    return this.http.get<candidateList[]>('http://localhost:3000/candidateDetails')
+  }
+
   CIList(listname:string){
     return this.http.get<CIRejected[]>(`http://localhost:3000/${listname}`)
   }

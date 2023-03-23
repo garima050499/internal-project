@@ -8,4 +8,17 @@
 .tableData{
     border-right:0.0001em solid lightgrey;
     padding-left: 4px;
+    width:150px;
+    text-align: center;
+    line-height: 5vh;
 }
+
+td:first-child{
+    width: 400px;
+}
+/* mat-card-content{
+    background-color:beige;
+    
+    box-shadow: 0px 2px 2px 0px rgb(158, 158, 158);
+    height:40px;
+} */

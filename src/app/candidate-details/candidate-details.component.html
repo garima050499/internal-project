@@ -1,1 +1,71 @@
-<p>candidate-details works!</p>
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <!-- <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Enter Name : ">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Enter Email : ">
+      </mat-form-field>
+        <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Enter Track Name : ">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Enter Experience : ">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Enter Skill : ">
+      </mat-form-field> -->
+    <form [formGroup]="forms" (ngSubmit)="FilterCandidate()">
+      <input type="text" placeholder="Enter Name : " formControlName="Name" />
+      <input type="text" placeholder="Enter Email : " formControlName="Email" />
+      <input type="text" placeholder="Enter Track Name : " formControlName="trackName" />
+      <input type="text" placeholder="Enter Skill : " formControlName="skill" />
+      <input type="submit">
+    </form>
+
+  </div>
+
+  <br/>
+ 
+
+    
+
+  
+    <mat-table #table [dataSource]="dataSource1" *ngIf="flag">
+
+      <!-- Position Column -->
+      <!-- <ng-container  matColumnDef="Name">
+          <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
+        </ng-container> -->
+
+      <ng-container *ngFor="let items of displayedColumns" matColumnDef={{items}}>
+        <mat-header-cell *matHeaderCellDef>{{items}}</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element[items]}}</mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <!-- <ng-container matColumnDef="EmployeeId">
+          <mat-header-cell *matHeaderCellDef> Employee Id </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+     -->
+      <!-- Weight Column -->
+      <!-- <ng-container matColumnDef="weight">
+          <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        </ng-container> -->
+
+      <!-- Symbol Column -->
+      <!-- <ng-container matColumnDef="symbol">
+          <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        </ng-container> -->
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="EditCandidate(row)"></mat-row>
+    </mat-table>
+ 
+
+
+</div>

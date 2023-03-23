@@ -531,17 +531,16 @@ h1, .h1 {
 
 
 mat-toolbar {
-    background: #004a9f;
+    background: #2d2d3e;
     color: white;
   }
   
   mat-sidenav {
-    margin: 16px;
+    
     width: 200px;
     border-right: none;
-    background: #002b5c;
+    background: #2d2d3e;
     color: white;
-    border-radius: 10px;
     padding: 16px;
     text-align: center;
   }
@@ -579,3 +578,5 @@ mat-toolbar {
     margin-bottom: 16px;
     background-color: rgba(255, 255, 255, 0.5);
   }
+
+  

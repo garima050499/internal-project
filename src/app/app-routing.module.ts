@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'details', component: CandidateDetailsComponent},
   {path:'candidate', component: CandidateComponent},
   {path: 'requirement', component: CandidateStatusComponent},
+  
 ];
 
 @NgModule({

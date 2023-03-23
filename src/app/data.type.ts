@@ -16,3 +16,25 @@ export interface CIRejected{
     Date:Date,
     id:number
 }
+
+export interface candidateList{
+    EmployeeID:number,
+    FirstName:string,
+    LastName:string,
+    Email:string,
+    TrackName:string,
+    MobileNo:string,
+    JobTitle:string,
+    Source:string,
+    Grade:number,
+    BaseLocation:string,
+    Experience:string,
+    Skill:string,
+    Status:string,
+    InterViewDate:string,
+    Panel:string,
+    Remarks:string,
+    LWD:string,
+    isInternal:boolean,
+    id:number
+}
