@@ -14,9 +14,10 @@ export class CandidateService {
   constructor(private _http: HttpClient) { }
   public formdata:any;
   public EmployeeID:number;
+  public updateNavigation:boolean;
   public storageSub= new Subject<number>();
   addEmployee(data: any): Observable<any> {
-    return this._http.post("", data);
+    return this._http.post("http://localhost:3000/candidateDetails/", data);
   }
 
   getCandidateList(): Observable<any> {

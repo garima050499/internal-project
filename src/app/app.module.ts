@@ -1,4 +1,4 @@
-import {HttpClientModule } from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {NgModule } from '@angular/core';
 import {BrowserModule } from '@angular/platform-browser';
 import {AppRoutingModule } from './app-routing.module';
@@ -21,14 +21,16 @@ import {FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {CandidateDetailsComponent } from './candidate-details/candidate-details.component';
 import {CIEditFormComponent } from './ciedit-form/ciedit-form.component';
 import {MatNativeDateModule } from '@angular/material/core';
-import {MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule } from '@angular/material/select';
-import {MatRadioModule } from "@angular/material/radio";
 import {MatCardModule } from "@angular/material/card";
 import {MatInputModule } from "@angular/material/input";
 import {MatDatepickerModule } from "@angular/material/datepicker";
 import { TrackNameComponent } from './track-name/track-name.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SpinnerComponent } from './spinner/spinner.component'
+import { LoadingInterceptor } from './loading.interceptor';
+import { AddRequirementComponent } from './add-requirement/add-requirement.component';
+import { AddTechnicalTrackComponent } from './add-technical-track/add-technical-track.component';
 
 
 
@@ -47,6 +49,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
     CandidateStatusComponent,
     CandidateDetailsComponent,
     TrackNameComponent,
+    SpinnerComponent,
+    AddRequirementComponent,
+    AddTechnicalTrackComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
     ReactiveFormsModule,
     MatProgressSpinnerModule,
   ],
-  providers: [CandidateComponent,CandidateDetailsComponent],
+  providers: [CandidateComponent,CandidateDetailsComponent,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

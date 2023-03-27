@@ -38,3 +38,18 @@ export interface candidateList{
     isInternal:boolean,
     id:number
 }
+
+export interface projectTable{
+    ProjectId:number,
+    Name:string,
+    accountId:number,
+    CreatedDate:string,
+    id:number
+}
+
+export interface TechnicalTrack{
+    Name:string,
+    projectId:number,
+    CreatedDate:string,
+    id:number
+}

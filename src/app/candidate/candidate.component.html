@@ -1,6 +1,9 @@
+<app-spinner></app-spinner>
+
+
 <form
   [formGroup]="candidate_form"
-  (ngSubmit)="candidate_form.status !== 'INVALID' && addEmployee()"
+  (ngSubmit)="isValid() && addEmployee()"
   class="border p-3 rounded-3"
 >
   <div class="row">
@@ -358,8 +361,9 @@
         <button
           type="submit"
           class="btn btn-primary"
-          [disabled]="candidate_form.status === 'INVALID'"
+          
           *ngIf="!isUpdate"
+          
         >
           Add Candidate
         </button>

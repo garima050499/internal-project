@@ -272,5 +272,90 @@
       "isInternal": true,
       "id": 42342
     }
+  ],
+  "Requirements": [
+    {
+      "requirement": 40,
+      "TrackId": 1,
+      "projectId": 1,
+      "createDate": "24/03/2023",
+      "id": 1
+    },
+    {
+      "requirement": 12,
+      "TrackId": 2,
+      "projectId": 1,
+      "createDate": "24/03/2023",
+      "id": 2
+    },
+    {
+      "requirement": 18,
+      "TrackId": 2,
+      "projectId": 1,
+      "createDate": "24/03/2023",
+      "id": 3
+    }
+  ],
+  "TechnicalTrack": [
+    {
+      "Name": ".Net Core",
+      "projectId": 1,
+      "CreatedDate": "24/03/2023",
+      "id": 1
+    },
+    {
+      "Name": ".Net Core + Angular",
+      "projectId": 1,
+      "CreatedDate": "24/03/2023",
+      "id": 2
+    },
+    {
+      "Name": "ASP.Net + C#",
+      "projectId": 1,
+      "CreatedDate": "24/03/2023",
+      "id": 3
+    }
+  ],
+  "Project": [
+    {
+      "ProjectId": 1,
+      "Name": "SummitAI_NewTech_Platform",
+      "accountId": 1,
+      "CreatedDate": "24/03/2023",
+      "id": 1
+    },
+    {
+      "ProjectId": 2,
+      "Name": "SummitAI_123",
+      "accountId": 1,
+      "CreatedDate": "24/03/2023",
+      "id": 2
+    },
+    {
+      "ProjectId": 3,
+      "Name": "Reporting_1234",
+      "accountId": 2,
+      "CreatedDate": "24/03/2023",
+      "id": 3
+    },
+    {
+      "ProjectId": 4,
+      "Name": "Reporting_3243",
+      "accountId": 2,
+      "CreatedDate": "24/03/2023",
+      "id": 4
+    }
+  ],
+  "Account": [
+    {
+      "Name": "SummitAI",
+      "CreatedDate": "24/03/2023",
+      "id": 1
+    },
+    {
+      "Name": "Reporting",
+      "CreatedDate": "24/03/2023",
+      "id": 2
+    }
   ]
 }

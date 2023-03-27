@@ -251,6 +251,7 @@ export class CandidateComponent implements OnInit {
     this._candidateService.updateCandidateById(this.data).subscribe((result) => {
       if (result) {
         console.log("Updated")
+        this._candidateService.updateNavigation=true;
         this.route.navigate(['details'])
       }
 
@@ -260,12 +261,19 @@ export class CandidateComponent implements OnInit {
 
     return this.candidate_form.get(name);
   }
+  isValid(){
+    if(this.candidate_form.status !== 'INVALID'){
+      return true;
+    }else{
+      return false;
+    }
+  }
   addEmployee() {
     console.log(this.candidate_form.value)
     this._candidateService.addEmployee(this.candidate_form.value).subscribe({
       next: (val: any) => {
         alert("Candidate Added Sucessfully");
-        console.log(val);
+        //console.log(val);
       },
       error: (err: any) => {
         console.error(err);
