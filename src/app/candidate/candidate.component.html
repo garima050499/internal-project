@@ -18,7 +18,11 @@
         class="radioButton"
         type="radio"
         id="employee_type"
+
         formControlName="employee_type"
+
+        name="employee_type"
+
         value="internal"
         (change)="selectCandidateType($event)"
       />
@@ -26,7 +30,11 @@
       <input
         class="radioButton"
         type="radio"
+
         formControlName="employee_type"
+
+        name="employee_type"
+
         value="external"
         (change)="selectCandidateType($event)"
       />
@@ -34,6 +42,7 @@
     </div>
   </div>
   <div class="row">
+
     <div class="col mb-3">
       <label for="accountName" class="form-label"> Account Name </label>
       <div class="col-sm-3">
@@ -66,6 +75,10 @@
   <div class="row">
     <div class="col mb-3" *ngIf="isCandidateType">
       <label for="employeeId" class="form-label">Employee ID</label>
+
+    <div class="col mb-3" *ngIf="isCandidateType">
+      <label for="employee_id" class="form-label">Employee ID</label>
+
       <input
         type="text"
         class="form-control"
@@ -181,6 +194,7 @@
       </div>
     </div>
     <div class="col mb-3">
+
       <label for="mobileNumber" class="form-label">Mobile Number</label>
       <input
         type="text"
@@ -191,29 +205,57 @@
           error:
             getControl('mobileNumber')?.errors &&
             getControl('mobileNumber')?.touched
+
+      <label for="employee_mobile_number" class="form-label"
+        >Mobile Number</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="employee_mobile_number"
+        formControlName="employee_mobile_number"
+        [ngClass]="{
+          error:
+            getControl('employee_mobile_number')?.errors &&
+            getControl('employee_mobile_number')?.touched
+
         }"
       />
       <div
         *ngIf="
+
           getControl('mobileNumber')?.errors &&
           getControl('mobileNumber')?.touched
+
+          getControl('employee_mobile_number')?.errors &&
+          getControl('employee_mobile_number')?.touched
+
         "
       >
         <small
           class="text-danger"
+
           *ngIf="getControl('mobileNumber')?.errors?.['required']"
+
+          *ngIf="getControl('employee_mobile_number')?.errors?.['required']"
+
         >
           Mobile Number is required</small
         >
         <small
           class="text-danger"
+
           *ngIf="getControl('mobileNumber')?.errors?.['pattern']"
+
+          *ngIf="getControl('employee_mobile_number')?.errors?.['pattern']"
+
         >
           Enter valid mobile number.</small
         >
       </div>
     </div>
     <div class="col mb-3">
+
       <label for="techTrackId" class="form-label"> Track </label>
       <div class="col-sm-3">
         <select name="Track" class="form-control" formControlName="techTrackId">
@@ -221,6 +263,16 @@
           <option value="1">Angular</option>
           <option value="2">.Net</option>
           <option value="3">.Net Core</option>
+
+      <label for="employee_track" class="form-label"> Track </label>
+      <div class="col-sm-3">
+        <select name="Track" class="form-control">
+          <option>-- Select Track --</option>
+          <option>Angular</option>
+          <option>.Net</option>
+          <option>.Net Core</option>
+          <option>Java</option>
+
         </select>
       </div>
     </div>
@@ -228,12 +280,21 @@
 
   <div class="row">
     <div class="col mb-3">
+
       <label for="jobTitle" class="form-label">Job Title</label>
       <input
         type="text"
         class="form-control"
         id="jobTitle"
         formControlName="jobTitle"
+
+      <label for="employee_job_title" class="form-label">Job Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="employee_job_title"
+        formControlName="employee_job_title"
+
       />
     </div>
     <div class="col mb-3">
@@ -241,8 +302,13 @@
       <input
         type="text"
         class="form-control"
+
         id="grade"
         formControlName="grade"
+
+        id="employee_grade"
+        formControlName="employee_grade"
+
       />
     </div>
     <div class="col mb-3">
@@ -250,8 +316,13 @@
       <input
         type="text"
         class="form-control"
+
         id="baseLocation"
         formControlName="baseLocation"
+
+        id="employee_base_location"
+        formControlName="employee_base_location"
+
       />
     </div>
   </div>
@@ -304,6 +375,7 @@
       </div>
     </div>
     <div class="col mb-3">
+
       <label for="interviewStatusId" class="form-label"> Status </label>
       <div class="col-sm-3">
         <select
@@ -316,12 +388,22 @@
           <option value="ci selected">CI Selected</option>
           <option value="ci rejected">CI Rejected</option>
           <option value="tbs">CI TBS</option>
+
+      <label for="employee_status" class="form-label"> Status </label>
+      <div class="col-sm-3">
+        <select name="Status" class="form-control">
+          <option>-- Select Status --</option>
+          <option>CI Selected</option>
+          <option>CI Rejected</option>
+          <option>CI TBS</option>
+
         </select>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col mb-3">
+
       <label for="dateOfInterview" class="form-label">Interview Date</label>
       <input
         type="date"
@@ -338,6 +420,26 @@
         id="panel"
         formControlName="Panel"
       />
+
+      <label for="employee_interview_date" class="form-label"
+        >Interview Date</label
+      >
+      <input type="date" class="form-control" id="employee_interview_date" />
+    </div>
+    <div class="col mb-3">
+      <label for="employee_panel" class="form-label">Panel</label>
+      <input type="text" class="form-control" id="employee_panel" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mb-3">
+      <label for="employee_remarks" class="form-label">Remarks</label>
+      <input type="text" class="form-control" id="employee_remarks" />
+    </div>
+    <div class="col mb-3">
+      <label for="employee_lwd" class="form-label">Last Working Day</label>
+      <input type="date" class="form-control" id="employee_lwd" />
+
     </div>
   </div>
   <div class="row">

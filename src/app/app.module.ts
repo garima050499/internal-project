@@ -15,6 +15,7 @@ import {MatTableModule} from '@angular/material/table';
 import {TableComponent } from './table/table.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {TableDialogComponent } from './table-dialog/table-dialog.component';
+
 import {CandidateComponent } from './candidate/candidate.component';
 import {CandidateStatusComponent } from './candidate-status/candidate-status.component'
 import {FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +33,14 @@ import { LoadingInterceptor } from './loading.interceptor';
 import { AddRequirementComponent } from './add-requirement/add-requirement.component';
 import { AddTechnicalTrackComponent } from './add-technical-track/add-technical-track.component';
 
+
+import { CandidateComponent } from './candidate/candidate.component';
+import { CandidateStatusComponent } from './candidate-status/candidate-status.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { CandidateDetailsComponent } from './candidate-details/candidate-details.component';
+import { CIEditFormComponent } from './ciedit-form/ciedit-form.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
