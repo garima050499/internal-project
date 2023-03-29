@@ -52,6 +52,7 @@ import { AddTechnicalTrackComponent } from './add-technical-track/add-technical-
     SpinnerComponent,
     AddRequirementComponent,
     AddTechnicalTrackComponent,
+    
   ],
   imports: [
     BrowserModule,

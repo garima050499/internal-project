@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CandidateComponent } from '../candidate/candidate.component';
-import { candidateList } from '../data.type';
+import { candidateList, } from '../data.type';
 import { CandidateService } from '../services/candidate.service';
 import { ChartDataService } from '../services/chart-data.service';
 import { filter } from 'rxjs';
@@ -12,8 +12,10 @@ import { threadId } from 'worker_threads';
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 
 interface ITableFilter {
-  column: string;
-  value: any;
+  Name: string;
+  skill: any;
+  Email:string;
+  trackName:string
 }
 
 @Component({
@@ -27,9 +29,12 @@ interface ITableFilter {
 
 
 export class CandidateDetailsComponent implements OnInit {
-  displayedColumns = ["FirstName","LastName","Email","TrackName","Experience","Skill"];
+  displayedColumns = ["FirstName","Email","TrackName","Experience","Skill"];
   dataSource1:MatTableDataSource<candidateList>=new MatTableDataSource<candidateList>();
   dataSource2:MatTableDataSource<candidateList>=new MatTableDataSource<candidateList>();
+  dataSource3:MatTableDataSource<candidateList>=new MatTableDataSource<candidateList>();
+  dataSource4:MatTableDataSource<candidateList>=new MatTableDataSource<candidateList>();
+  dataSource5:MatTableDataSource<candidateList>=new MatTableDataSource<candidateList>();
   public flag=false;
   public action="Action";
   public formData:any|undefined;
@@ -37,23 +42,8 @@ export class CandidateDetailsComponent implements OnInit {
   public updatedCandidate:candidateList;
   candidateFilters: any=[];
   filterDictionary= new Map<string,string>();
- // public employee_first_name:string;
   public employeeId:number;
-  // applyFilter(event:Event) {
-  //   let filterValue = (event.target as HTMLInputElement).value;
-  //   filterValue = filterValue.trim(); // Remove whitespace
-  //   filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
-  //   if(filterValue!=""){
-  //     this.dataSource2.filter = filterValue;
-      
-  //     this.flag=true;
-  //   this.dataSource1=this.dataSource2;
-  //   }else{
-  //     this.dataSource1=undefined;
-  //     this.flag=false;
-  //   }
-    
-  // }
+  
 
   constructor(private chartData:ChartDataService,private form:CandidateService,private router: Router,private udatedCandidate:CandidateComponent) { }
   public CandidateList:candidateList[];
@@ -68,17 +58,19 @@ export class CandidateDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     //console.log(this.form.updateNavigation)
-   
-
-
-
-   
-
-
-    this.chartData.candidateList().subscribe((result)=>{
+      this.chartData.candidateList().subscribe((result)=>{
       if(result){
+        for(var i=0;i<result.length-1;i++){
+          result[i].FirstName=result[i].FirstName+" "+result[i].LastName
+        }
+        
         this.CandidateList = result;
+
         this.dataSource2=new MatTableDataSource<candidateList>(this.CandidateList);
+        this.dataSource1=new MatTableDataSource<candidateList>(this.CandidateList);
+        this.dataSource3=new MatTableDataSource<candidateList>(this.CandidateList)
+        this.dataSource4=new MatTableDataSource<candidateList>(this.CandidateList);
+        this.dataSource5=new MatTableDataSource<candidateList>(this.CandidateList)
       }
     }) 
 
@@ -98,27 +90,6 @@ export class CandidateDetailsComponent implements OnInit {
     }
   }
   FilterCandidate(){
-
-
-
-
-    
-
-    // let filterObj: { FirstName:string,Email: String,Skill:string,TrackName:string}={FirstName:null,Email:null,Skill:null,TrackName:null};
-
-    // filterObj.FirstName=this.forms.get("Name").value;
-    // filterObj.Email=this.forms.get("Email").value;
-    // filterObj.Skill=this.forms.get("skill").value;
-    // filterObj.TrackName=this.forms.get("trackName").value;
-    // this.flag=true;
-    // console.log(filterObj)
-    // let f=JSON.stringify(filterObj);
-    // let m=["swati","swati@gmail.com",".net","java"]
-    // console.log(m)
-    // this.dataSource2.filter = "swati";
-    // console.log(this.dataSource2);
-    // this.dataSource1=this.dataSource2
-
     // let filterValue="";
     // let flag=0;
     // //console.log(this.forms);
@@ -126,7 +97,8 @@ export class CandidateDetailsComponent implements OnInit {
     //   console.log(this.forms.get("Name").value)
     //   filterValue=this.forms.get("Name").value
     //   flag=1;
-    // }else if(this.forms.get("Email").value){
+    // }
+    // else if(this.forms.get("Email").value){
     //   filterValue=this.forms.get("Email").value
     //   flag=1;
     // }else if(this.forms.get("skill").value){
@@ -154,138 +126,60 @@ export class CandidateDetailsComponent implements OnInit {
     //   this.flag=false;
     // }
 
-    // let filterValue=(this.forms.get("Email").value).trim();
-    // filterValue=filterValue.toLowerCase();
-    // console.log(filterValue)
-    // // let filterValue1=(this.forms.get("Email").value).trim().toLowerCase();
-    // // let filterValue2=(this.forms.get("skill").value).trim().toLowerCase();
-    // // let filterValue3=(this.forms.get("trackName").value).trim().toLowerCase();
-    // this.dataSource2.filter = filterValue;
-    // console.log(this.dataSource2)
-    // // this.dataSource2.filter = filterValue1;
-    // // this.dataSource2.filter = filterValue2;
-    // // this.dataSource2.filter = filterValue3;
-    // this.dataSource1=this.dataSource2;
-    // console.log(this.dataSource1)
 
-    // let filterValue1="";
-    // let filterValue2="";
-    // let filterValue3="";
-    // let filterValue4="";
-    // if(this.forms.get("Name").value){
-    //   filterValue1=this.forms.get("Name").value;
-    // }
-    // if(this.forms.get("Email").value){
-    //   filterValue2=this.forms.get("Email").value;
-    // }
-    // if(this.forms.get("skill").value){
-    //   filterValue3=this.forms.get("skill").value;
-    // }
-    // if(this.forms.get("trackName").value){
-    //   filterValue4=this.forms.get("trackName").value;
-    // }
-
-    // console.log(filterValue1)
-    // console.log(filterValue2)
-    // console.log(filterValue3)
-    // console.log(filterValue4)
-
-  //   let filterVal=[filterValue1,filterValue2,filterValue3,filterValue4]
-
-  //   this.dataSource2.filterPredicate=(data: String, filter: string) => {
-  //     return data.includes(filter);
-  // };
-
-
-  // let filterObj=[
-  //   {id:"FirstName",value:this.forms.get("Name").value},
-  //   {id:"Email",value:this.forms.get("Email").value},
-  //   {id:"skill",value:this.forms.get("skill").value},
-  //   {id:"trackName",value:this.forms.get("trackName").value}
-  // ];
-  // this.dataSource2.filter = JSON.stringify(filterObj);
-
-  // console.log(this.dataSource2)
-    
-
-    // if(filterValue1!="" && filterValue2!="" && filterValue3!="" && filterValue4!=""){
-    //   this.flag=true;
-    //   filterValue1=filterValue1.trim().toLowerCase();
-    //   filterValue2=filterValue2.trim().toLowerCase();
-    //   filterValue3=filterValue3.trim().toLowerCase();
-    //   filterValue4=filterValue4.trim().toLowerCase();
-    //   const filterObj = { 
-    //     filterValue11: filterValue1,
-    //     filterValue21: filterValue2,
-    //     filterValue31: filterValue3,
-    //     filterValue41:filterValue4
-    // };
-
-    // console.log(JSON.stringify(filterObj))
-
-    // this.dataSource2.filter = JSON.stringify(filterObj);
-    // console.log(this.dataSource2)
-    //   // this.dataSource2.filter=filterValue1;
-    //   // this.dataSource2=this.dataSource2;
-    //   // console.log("vvr",this.dataSource2)
-      
-    //   // this.dataSource2.filter=filterValue3;
-    //   // this.dataSource2=this.dataSource2;
-    //   // console.log(this.dataSource2)
-    //   // this.dataSource2.filter=filterValue4;
-    //   // this.dataSource2=this.dataSource2;
-    //   // console.log(this.dataSource2)
-
-    //   this.dataSource1=this.dataSource2;
-    //   console.log(this.dataSource1)
-    // }
-
-    // this.flag=true;
-    //   this.dataSource2.filter=this.forms.value;
-    //   console.log(this.dataSource2);
-    //   this.dataSource1=this.dataSource2
-
-
-      
-  }
-
-  applyFilter(ob:any,empfilter:candidateList) {
-
-    this.filterDictionary.set(empfilter.FirstName,ob.value);
-
-
-    var jsonString = JSON.stringify(Array.from(this.filterDictionary.entries()));
-    
-    this.dataSource2.filter = jsonString;
+    let filterValue1="";
+    let filterValue2="";
+    let filterValue3="";
+    let filterValue4="";
     this.flag=true;
-    this.dataSource1=this.dataSource2
-    //console.log(this.filterValues);
+    if(this.forms.get("Name").value){
+      filterValue1=this.forms.get("Name").value;
+    }
+    if(this.forms.get("Email").value){
+      filterValue2=this.forms.get("Email").value;
+    }
+    if(this.forms.get("skill").value){
+      filterValue3=this.forms.get("skill").value;
+    }
+    if(this.forms.get("trackName").value){
+      filterValue4=this.forms.get("trackName").value;
+    }
+
+    if(filterValue3!=""){
+      this.dataSource3.filter=filterValue3
+      this.dataSource1=this.dataSource3
+    }
+    if(filterValue4!=""){
+      this.dataSource4=this.dataSource1
+      this.dataSource4.filter=filterValue4
+      this.dataSource1=this.dataSource4
+    }
+    if(filterValue1!=""){
+      this.dataSource5=this.dataSource1
+      this.dataSource5.filter=filterValue1
+      console.log(filterValue1)
+      console.log(this.dataSource5)
+      this.dataSource1=this.dataSource5
+      
+    }
+    if(filterValue2!=""){
+      
+      
+      this.dataSource2=this.dataSource1
+      this.dataSource2.filter=filterValue2
+      this.dataSource1=this.dataSource2
+    }
+      
   }
+
+
+
 
 
   EditCandidate(row:any){
     
     this.form.EmployeeID=row.EmployeeID;
     this.form.storageSub.next(row.EmployeeID);
-    //this.form.formdata=row;
-
-   
-    // this.cnadidateForm.candidate_form.patchValue({
-    //   employee_first_name: row.FirstName,
-    //   employee_last_name:row.LastName,
-    //   employee_id:row.EmployeeID,
-    //   employee_email:row.Email,
-    //   employee_mobile_number: row.MobileNo,
-    //   employee_job_title: row.JobTitle,
-    //   employee_source: row.Source,
-    //   employee_grade: row.Grade,
-    //   employee_base_location: row.BaseLocation,
-    //   employee_skill: row.Skill,
-    //   employee_experience: row.Experience
-
-    // })
-    // this.form.formdata=this.cnadidateForm.candidate_form;
-    
     this.router.navigate(["candidate"]);
   }
   
