@@ -1,6 +1,9 @@
+<app-spinner></app-spinner>
+
+
 <form
   [formGroup]="candidate_form"
-  (ngSubmit)="candidate_form.status !== 'INVALID' && addEmployee()"
+  (ngSubmit)="isValid() && addEmployee()"
   class="border p-3 rounded-3"
 >
   <div class="row">
@@ -15,7 +18,11 @@
         class="radioButton"
         type="radio"
         id="employee_type"
+
+        formControlName="employee_type"
+
         name="employee_type"
+
         value="internal"
         (change)="selectCandidateType($event)"
       />
@@ -23,7 +30,11 @@
       <input
         class="radioButton"
         type="radio"
+
+        formControlName="employee_type"
+
         name="employee_type"
+
         value="external"
         (change)="selectCandidateType($event)"
       />
@@ -31,94 +42,124 @@
     </div>
   </div>
   <div class="row">
+
+    <div class="col mb-3">
+      <label for="accountName" class="form-label"> Account Name </label>
+      <div class="col-sm-3">
+        <select
+          name="accountName"
+          class="form-control"
+          formControlName="accountName"
+        >
+          <option>-- Select Account --</option>
+          <option>Summit_AI</option>
+          <option>Reporting</option>
+        </select>
+      </div>
+    </div>
+    <div class="col mb-3">
+      <label for="projectId" class="form-label"> Project Id </label>
+      <div class="col-sm-3">
+        <select
+          name="projectId"
+          class="form-control"
+          formControlName="projectId"
+        >
+          <option>-- Select Project --</option>
+          <option>Summit_123</option>
+          <option>Summit_456</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mb-3" *ngIf="isCandidateType">
+      <label for="employeeId" class="form-label">Employee ID</label>
+
     <div class="col mb-3" *ngIf="isCandidateType">
       <label for="employee_id" class="form-label">Employee ID</label>
+
       <input
         type="text"
         class="form-control"
-        id="employee_id"
-        formControlName="employee_id"
+        id="employeeId"
+        formControlName="employeeId"
         [ngClass]="{
           error:
-            getControl('employee_id')?.errors &&
-            getControl('employee_id')?.touched
+            getControl('employeeId')?.errors &&
+            getControl('employeeId')?.touched
         }"
       />
       <div
         *ngIf="
-          getControl('employee_id')?.errors &&
-          getControl('employee_id')?.touched
+          getControl('employeeId')?.errors && getControl('employeeId')?.touched
         "
       >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_id')?.errors?.['required']"
+          *ngIf="getControl('employeeId')?.errors?.['required']"
         >
           Employee Id is required</small
         >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_id')?.errors?.['minlength']"
+          *ngIf="getControl('employeeId')?.errors?.['minlength']"
         >
           Must be atleast 5 digits.</small
         >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_id')?.errors?.['pattern']"
+          *ngIf="getControl('employeeId')?.errors?.['pattern']"
         >
           Accepts numeric values only.</small
         >
       </div>
     </div>
     <div class="col mb-3">
-      <label for="employee_first_name" class="form-label">First Name</label>
+      <label for="firstName" class="form-label">First Name</label>
       <input
         type="text"
         class="form-control"
-        id="employee_first_name"
-        formControlName="employee_first_name"
+        id="firstName"
+        formControlName="firstName"
         [ngClass]="{
           error:
-            getControl('employee_first_name')?.errors &&
-            getControl('employee_first_name')?.touched
+            getControl('firstName')?.errors && getControl('firstName')?.touched
         }"
       />
       <div
         *ngIf="
-          getControl('employee_first_name')?.errors &&
-          getControl('employee_first_name')?.touched
+          getControl('firstName')?.errors && getControl('firstName')?.touched
         "
       >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_first_name')?.errors?.['required']"
+          *ngIf="getControl('firstName')?.errors?.['required']"
         >
           First name is required</small
         >
       </div>
     </div>
     <div class="col mb-3">
-      <label for="employee_last_name" class="form-label">Last Name</label>
+      <label for="lastName" class="form-label">Last Name</label>
       <input
         type="text"
         class="form-control"
-        id="employee_last_name"
-        formControlName="employee_last_name"
+        id="lastName"
+        formControlName="lastName"
         [ngClass]="{
           error:
-            getControl('employee_last_name')?.errors &&
-            getControl('employee_last_name')?.touched
+            getControl('lastName')?.errors && getControl('lastName')?.touched
         }"
       />
       <div
         *ngIf="
-          getControl('employee_last_name')?.errors &&
-          getControl('employee_last_name')?.touched
+          getControl('lastName')?.errors && getControl('lastName')?.touched
         "
       >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_last_name')?.errors?.['required']"
+          *ngIf="getControl('lastName')?.errors?.['required']"
         >
           Last name is required</small
         >
@@ -127,39 +168,44 @@
   </div>
   <div class="row">
     <div class="col mb-3">
-      <label for="employee_email" class="form-label">Email</label>
+      <label for="email" class="form-label">Email</label>
       <input
         type="email"
         class="form-control"
-        id="employee_email"
-        formControlName="employee_email"
+        id="email"
+        formControlName="email"
         [ngClass]="{
-          error:
-            getControl('employee_email')?.errors &&
-            getControl('employee_email')?.touched
+          error: getControl('email')?.errors && getControl('email')?.touched
         }"
       />
-      <div
-        *ngIf="
-          getControl('employee_email')?.errors &&
-          getControl('employee_email')?.touched
-        "
-      >
+      <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
         <small
           class="text-danger"
-          *ngIf="getControl('employee_email')?.errors?.['required']"
+          *ngIf="getControl('email')?.errors?.['required']"
         >
           Email id is required</small
         >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_email')?.errors?.['pattern']"
+          *ngIf="getControl('email')?.errors?.['pattern']"
         >
           Valid Email id .</small
         >
       </div>
     </div>
     <div class="col mb-3">
+
+      <label for="mobileNumber" class="form-label">Mobile Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mobileNumber"
+        formControlName="mobileNumber"
+        [ngClass]="{
+          error:
+            getControl('mobileNumber')?.errors &&
+            getControl('mobileNumber')?.touched
+
       <label for="employee_mobile_number" class="form-label"
         >Mobile Number</label
       >
@@ -172,29 +218,52 @@
           error:
             getControl('employee_mobile_number')?.errors &&
             getControl('employee_mobile_number')?.touched
+
         }"
       />
       <div
         *ngIf="
+
+          getControl('mobileNumber')?.errors &&
+          getControl('mobileNumber')?.touched
+
           getControl('employee_mobile_number')?.errors &&
           getControl('employee_mobile_number')?.touched
+
         "
       >
         <small
           class="text-danger"
+
+          *ngIf="getControl('mobileNumber')?.errors?.['required']"
+
           *ngIf="getControl('employee_mobile_number')?.errors?.['required']"
+
         >
           Mobile Number is required</small
         >
         <small
           class="text-danger"
+
+          *ngIf="getControl('mobileNumber')?.errors?.['pattern']"
+
           *ngIf="getControl('employee_mobile_number')?.errors?.['pattern']"
+
         >
           Enter valid mobile number.</small
         >
       </div>
     </div>
     <div class="col mb-3">
+
+      <label for="techTrackId" class="form-label"> Track </label>
+      <div class="col-sm-3">
+        <select name="Track" class="form-control" formControlName="techTrackId">
+          <option>-- Select Track --</option>
+          <option value="1">Angular</option>
+          <option value="2">.Net</option>
+          <option value="3">.Net Core</option>
+
       <label for="employee_track" class="form-label"> Track </label>
       <div class="col-sm-3">
         <select name="Track" class="form-control">
@@ -203,6 +272,7 @@
           <option>.Net</option>
           <option>.Net Core</option>
           <option>Java</option>
+
         </select>
       </div>
     </div>
@@ -210,92 +280,115 @@
 
   <div class="row">
     <div class="col mb-3">
+
+      <label for="jobTitle" class="form-label">Job Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="jobTitle"
+        formControlName="jobTitle"
+
       <label for="employee_job_title" class="form-label">Job Title</label>
       <input
         type="text"
         class="form-control"
         id="employee_job_title"
         formControlName="employee_job_title"
+
       />
     </div>
     <div class="col mb-3">
-      <label for="employee_grade" class="form-label">Grade</label>
+      <label for="grade" class="form-label">Grade</label>
       <input
         type="text"
         class="form-control"
+
+        id="grade"
+        formControlName="grade"
+
         id="employee_grade"
         formControlName="employee_grade"
+
       />
     </div>
     <div class="col mb-3">
-      <label for="employee_base_location" class="form-label"
-        >Base Location</label
-      >
+      <label for="baseLocation" class="form-label">Base Location</label>
       <input
         type="text"
         class="form-control"
+
+        id="baseLocation"
+        formControlName="baseLocation"
+
         id="employee_base_location"
         formControlName="employee_base_location"
+
       />
     </div>
   </div>
 
   <div class="row">
     <div class="col mb-3">
-      <label for="employee_skill" class="form-label">Skill</label>
+      <label for="skill" class="form-label">Skill</label>
       <input
         type="text"
         class="form-control"
-        id="employee_skill"
-        formControlName="employee_skill"
+        id="skill"
+        formControlName="skill"
         [ngClass]="{
-          error:
-            getControl('employee_skill')?.errors &&
-            getControl('employee_skill')?.touched
+          error: getControl('skill')?.errors && getControl('skill')?.touched
         }"
       />
-      <div
-        *ngIf="
-          getControl('employee_skill')?.errors &&
-          getControl('employee_skill')?.touched
-        "
-      >
+      <div *ngIf="getControl('skill')?.errors && getControl('skill')?.touched">
         <small
           class="text-danger"
-          *ngIf="getControl('employee_skill')?.errors?.['required']"
+          *ngIf="getControl('skill')?.errors?.['required']"
         >
           Skill is required</small
         >
       </div>
     </div>
     <div class="col mb-3">
-      <label for="employee_experience" class="form-label">Experience</label>
+      <label for="experience" class="form-label">Experience</label>
       <input
         type="text"
         class="form-control"
-        id="employee_experience"
-        formControlName="employee_experience"
+        id="experience"
+        formControlName="experience"
         [ngClass]="{
           error:
-            getControl('employee_experience')?.errors &&
-            getControl('employee_experience')?.touched
+            getControl('experience')?.errors &&
+            getControl('experience')?.touched
         }"
       />
       <div
         *ngIf="
-          getControl('employee_experience')?.errors &&
-          getControl('employee_experience')?.touched
+          getControl('experience')?.errors && getControl('experience')?.touched
         "
       >
         <small
           class="text-danger"
-          *ngIf="getControl('employee_experience')?.errors?.['required']"
+          *ngIf="getControl('experience')?.errors?.['required']"
         >
           Experience is required</small
         >
       </div>
     </div>
     <div class="col mb-3">
+
+      <label for="interviewStatusId" class="form-label"> Status </label>
+      <div class="col-sm-3">
+        <select
+          name="Status"
+          class="form-control"
+          formControlName="interviewStatus"
+        >
+          <option>-- Select Status --</option>
+          <option value="new">New</option>
+          <option value="ci selected">CI Selected</option>
+          <option value="ci rejected">CI Rejected</option>
+          <option value="tbs">CI TBS</option>
+
       <label for="employee_status" class="form-label"> Status </label>
       <div class="col-sm-3">
         <select name="Status" class="form-control">
@@ -303,12 +396,31 @@
           <option>CI Selected</option>
           <option>CI Rejected</option>
           <option>CI TBS</option>
+
         </select>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col mb-3">
+
+      <label for="dateOfInterview" class="form-label">Interview Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="dateOfInterview"
+        formControlName="interviewDate"
+      />
+    </div>
+    <div class="col mb-3">
+      <label for="panel" class="form-label">Panel</label>
+      <input
+        type="text"
+        class="form-control"
+        id="panel"
+        formControlName="Panel"
+      />
+
       <label for="employee_interview_date" class="form-label"
         >Interview Date</label
       >
@@ -327,17 +439,48 @@
     <div class="col mb-3">
       <label for="employee_lwd" class="form-label">Last Working Day</label>
       <input type="date" class="form-control" id="employee_lwd" />
+
     </div>
   </div>
   <div class="row">
-    <div class="col-6 offset-3">
+    <div class="col mb-3">
+      <label for="remark" class="form-label">Remarks</label>
+      <input
+        type="text"
+        class="form-control"
+        id="remark"
+        formControlName="remark"
+      />
+    </div>
+    <div class="col mb-3">
+      <label for="LWD" class="form-label">Last Working Day</label>
+      <input type="date" class="form-control" id="LWD" formControlName="lwd" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 offset-3" >
+      <div class="d-grid">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          
+          *ngIf="!isUpdate"
+          
+        >
+          Add Candidate
+        </button>
+      </div>
+    </div>
+    <div class="col-6 offset-3" >
       <div class="d-grid">
         <button
           type="submit"
           class="btn btn-primary"
           [disabled]="candidate_form.status === 'INVALID'"
+          *ngIf="isUpdate"
+          (click)="updateCandidateById()"
         >
-          Add Candidate
+          Update Candidate
         </button>
       </div>
     </div>

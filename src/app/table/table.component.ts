@@ -25,7 +25,7 @@ export class TableComponent implements OnInit {
   public CITBS:number | undefined;
   public jobTrack:undefined | jobTracks[];
   public labels= ['trackName','summitRequirement','fullfilledPositions', 'pendngRequirement','CIRejected','CIScheduled', 'CITBS']
-  public label1:string[];
+  
 
   constructor(private chartData:ChartDataService) { }
 
@@ -40,11 +40,11 @@ export class TableComponent implements OnInit {
   ReadJobTracks(){    
     this.chartData.jobTrackList().subscribe((result)=>{
       if(result){
+        
         this.jobTrack = result;
-        //this.label1=Object.values(result["trackName"]);
-        //console.log(this.label1);
+        console.log(result[0]);
         console.log(Object.values(result[0]));
-        this.dataSource=new MatTableDataSource<jobTracks>(this.jobTrack);
+        //this.dataSource=new MatTableDataSource<jobTracks>(this.jobTrack);
       }
     })
 }
